@@ -31,26 +31,26 @@ test("it makes sure button is clickable", () => {
   fireEvent.click(button);
 });
 
-// test("it collect name and email when form is submitted", () => {
-//   // NOT THE BEST IMPLEMENTATION
+test("it collect name and email when form is submitted", () => {
+  // NOT THE BEST IMPLEMENTATION
 
-//   // Try to render my component
-//   render(<App />);
+  // Try to render my component
+  render(<InputName />);
 
-//   // Find the two inputs
-//   const [nameinput, emailInput] = screen.getAllByRole("textbox");
+  // Find the two inputs
+  const [nameinput, emailInput] = screen.getAllByRole("textbox");
 
-//   // Simulate typing in a name
-//   user.click(nameinput);
-//   user.keyboard("jane");
+  // Simulate typing in a name
+  user.click(nameinput); // Check for when name input field is focused
+  user.keyboard("jane"); // Check for typing in the name input field
 
-//   // Simulate typing in an email
-//   user.click(emailInput);
-//   user.keyboard("jane@jane.com");
+  // Simulate typing in an email
+  user.click(emailInput); // Checl for when email input field is focused
+  user.keyboard("jane@jane.com"); // Check for typing in the email input field
 
-//   // Find the button
-//   const button = screen.getByRole("button");
+  // Find the button
+  const button = screen.getByRole("button");
 
-//   // Simulate clicking the button
-//   button.click(button);
-// });
+  // Simulate clicking the button
+  button.click(button);
+});
