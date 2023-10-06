@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import InputName from "./components/inputName";
 
@@ -15,6 +15,20 @@ test("it shows two inputs and a button", () => {
   // Make sure the component is doing what is expected to do
   expect(inputs).toHaveLength(2);
   expect(button).toBeInTheDocument();
+});
+
+test("it makes sure button is clickable", () => {
+  // Render the component
+  render(<InputName />);
+
+  // Find button element in the component
+  const button = screen.getByText("Submit");
+
+  // Check that the button is initially enabled
+  expect(button).toBeEnabled();
+
+  // Make sure component is working as expected
+  fireEvent.click(button);
 });
 
 // test("it collect name and email when form is submitted", () => {

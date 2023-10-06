@@ -13,7 +13,6 @@ const InputName = ({ name, email, setName, setEmail, handleSubmit }) => {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          role="textbox"
         />
       </div>
       <div className="email">
@@ -23,13 +22,10 @@ const InputName = ({ name, email, setName, setEmail, handleSubmit }) => {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          role="textbox"
         />
       </div>
 
-      <button type="submit" role="button">
-        Submit
-      </button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
