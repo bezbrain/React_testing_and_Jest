@@ -7,18 +7,20 @@ const InputName = ({ name, email, setName, setEmail, handleSubmit }) => {
     <form onSubmit={handleSubmit}>
       <h2>Add a User</h2>
       <div className="name">
-        <label htmlFor="">Name</label>
+        <label htmlFor="name">Name</label>
         <br />
         <input
+          id="name"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div className="email">
-        <label htmlFor="">Email</label>
+        <label htmlFor="email">Email</label>
         <br />
         <input
+          id="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
